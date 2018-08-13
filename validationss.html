@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="validationss.js"></script>
+
+</head>
+<body ng-app="myapp">
+	<div ng-controller="myController">
+		<form name="myform">
+		FirstName:<input type="text" name="firstname" ng-model="user.firstname" ng-maxlength="10"  ng-minlength="3" ng-required="true">
+		<div style="color:red"  ng-show="myform.$submitted||myform.firstname.$touched">
+			<div ng-show="myform.firstname.$error.required">must be required</div>
+			<div ng-show="myform.firstname.$error.maxlength">maxlength 10</div>
+			<div ng-show="myform.firstname.$error.minlength">minlength 4</div>
+			</div>
+			Mail:<input type="email" name="mail" ng-model="user.mail" ng-maxlength="10"  ng-minlength="3" ng-required="true">
+			<div style="color:red"  ng-show="myform.$submitted||myform.mail.$touched">
+             <div ng-show="myform.mail.$error.required">mail must be required</div>
+             <div ng-show="myform.mail.$error.email">invalid email</div>
+			</div>
+			Password:<input type="password" name="password" ng-model="user.password" ng-maxlength="10"  ng-minlength="3" ng-required="true">
+			<div style="color:red"  ng-show="myform.$submitted||myform.password.$touched">
+             <div ng-show="myform.password.$error.required">password must be required</div>
+			</div>
+			<button type="submitt"      ng-click="check()">submitt</button>
+		
+	
+			
+
+		
+		
+
+
+      
+
+
+
+</form>
+	</div>
+
+</body>
+</html>
